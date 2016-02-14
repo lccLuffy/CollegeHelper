@@ -1,0 +1,38 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="DefaultTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/purple_primary</item>
+        <item name="colorPrimaryDark">@color/purple_primary_dark</item>
+        <item name="colorAccent">@color/purple_accent</item>
+    </style>
+
+    <style name="Widget.MyApp.HeaderBar.Spinner" parent="Widget.AppCompat.Light.Spinner.DropDown.ActionBar">
+        <item name="android:background">?android:selectableItemBackground</item>
+        <item name="android:dropDownSelector">?android:selectableItemBackground</item>
+        <item name="android:divider">@null</item>
+        <item name="android:overlapAnchor">true</item>
+    </style>
+
+    <style name="DefaultTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="DefaultTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="weacher_title">
+        <item name="android:textSize">21.0sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="weacher_temp">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="weacher_weather">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+
+</resources>

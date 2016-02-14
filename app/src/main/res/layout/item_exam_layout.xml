@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <com.lcc.uestc.widget.TimeLineView
+        android:id="@+id/timelineView"
+        android:layout_width="70dp"
+        android:layout_height="match_parent"
+        app:beginLine="@color/purple_primary_light"
+        app:endLine="@color/purple_primary_light"
+        app:lineSize="1dp"
+        app:marker="@mipmap/ic_time"
+        app:markerSize="15dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:id="@+id/courseName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
+            android:drawableStart="@drawable/shape_circle"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:textColor="@android:color/holo_blue_light"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/arrange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/courseName"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:textColor="@android:color/holo_green_dark" />
+
+        <TextView
+            android:id="@+id/place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/arrange"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:textColor="@android:color/holo_green_light" />
+
+        <TextView
+            android:id="@+id/leftTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:drawablePadding="5dp"
+            android:gravity="end"
+            android:padding="5dp"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textSize="15dp" />
+    </RelativeLayout>
+</LinearLayout>
+
+

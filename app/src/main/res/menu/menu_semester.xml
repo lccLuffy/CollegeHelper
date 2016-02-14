@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:theme="@style/Base.ThemeOverlay.AppCompat.Dark"
+    tools:context=".MainActivity">
+    <item android:id="@+id/action_update"
+        android:title="同步数据"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item android:id="@+id/action_2014_2015_up"
+        android:title="2014-2015上学期"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item android:id="@+id/action_2014_2015_down"
+        android:title="2014-2015下学期"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item android:id="@+id/action_2015_2016_UP"
+        android:title="2015-2016上学期"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+</menu>

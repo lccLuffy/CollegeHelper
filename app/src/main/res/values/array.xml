@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="examType">
+        <item>期末考试</item>
+        <item>期中考试 </item>
+        <item>补考</item>
+        <item>缓考</item>
+    </string-array>
+</resources>

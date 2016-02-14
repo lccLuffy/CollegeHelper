@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.jenzz.materialpreference.PreferenceCategory android:title="常用">
+        <com.jenzz.materialpreference.CheckBoxPreference
+            android:key="update_no_snackbar"
+            android:title="更新数据不提示"
+            android:defaultValue="true"
+            android:summary="更新数据会清除本地数据"/>
+    </com.jenzz.materialpreference.PreferenceCategory>
+    <com.jenzz.materialpreference.Preference
+        android:key="logout"
+        android:title="退出登录"
+        android:summary="退出登录并清除本地数据">
+    </com.jenzz.materialpreference.Preference>
+</PreferenceScreen>

@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">大学帮手</string>
+
+    <string name="action_settings">设置</string>
+
+    <string name="drawer_item_home">首页</string>
+    <string name="drawer_item_collection">我的收藏</string>
+    <string name="drawer_item_read">浏览历史</string>
+    <string name="title_pick_photo">照片</string>
+    <string name="title_pick_place">位置</string>
+    <string name="title_about">关于</string>
+    <string name="title_settings">设置</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_collect">CollectActivity</string>
+    <string name="title_activity_laravel">LaravelActivity</string>
+
+</resources>
