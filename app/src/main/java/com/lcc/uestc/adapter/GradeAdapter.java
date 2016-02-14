@@ -96,12 +96,6 @@ public class GradeAdapter extends NiceAdapter<GradeBean> {
                     .setDuration(1000)
                     .start();
 
-            ObjectAnimator.ofFloat(itemView, "scaleX", 0.75f, 1f)
-                    .setDuration(100)
-                    .start();
-            ObjectAnimator.ofFloat(itemView, "scaleY", 0.75f, 1f)
-                    .setDuration(100)
-                    .start();
             courseName.setText(data.getCourseName());
             progressBar.setProgress(g);
             finalGrade.setText("最终成绩: "+data.getFinalGrade());

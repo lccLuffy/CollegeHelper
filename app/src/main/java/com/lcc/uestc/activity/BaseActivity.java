@@ -55,6 +55,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 		{
 			toast = Toast.makeText(this,text,Toast.LENGTH_SHORT);
 		}
+
 		toast.setText(text);
 		toast.show();
 	}
