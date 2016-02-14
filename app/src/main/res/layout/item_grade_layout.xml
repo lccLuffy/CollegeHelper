@@ -24,10 +24,18 @@
             android:textSize="20dp"
             android:textStyle="bold" />
 
-        <View
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
-            android:layout_height=".5dp"
-            android:background="#ffCCCCCC" />
+            android:layout_height="2dp"
+            android:max="100"
+            android:progressDrawable="@drawable/progress_bar" />
+        <!--
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height=".5dp"
+                    android:background="#ffCCCCCC" />-->
 
         <TextView
             android:id="@+id/finalGrade"
@@ -45,8 +53,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:padding="5dp"
-            android:paddingStart="25dp"
-            android:textColor="@android:color/holo_purple" />
+            android:paddingStart="25dp" />
 
         <TextView
             android:id="@+id/GPA"
@@ -54,8 +61,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:padding="5dp"
-            android:paddingStart="25dp"
-            android:textColor="@color/pink_primary" />
+            android:paddingStart="25dp" />
 
     </LinearLayout>
 </android.support.v7.widget.CardView>

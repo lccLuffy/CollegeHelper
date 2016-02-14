@@ -20,7 +20,9 @@ public abstract class BaseActivity extends AppCompatActivity {
 	@Bind(R.id.toolbar)
 
 	public Toolbar toolbar;
+
 	private MaterialDialog materialDialog;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

@@ -1,9 +1,11 @@
 package com.lcc.uestc.adapter;
 
+import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.lcc.uestc.R;
@@ -73,6 +75,8 @@ public class GradeAdapter extends NiceAdapter<GradeBean> {
         @Bind(R.id.credit)
         TextView credit;
 
+        @Bind(R.id.progressBar)
+        ProgressBar progressBar;
         public Holder(View itemView)
         {
             super(itemView);
@@ -81,7 +85,25 @@ public class GradeAdapter extends NiceAdapter<GradeBean> {
 
         @Override
         public void onBindData(GradeBean data) {
+            int g = 0;
+            try {
+                g = Integer.parseInt(data.getFinalGrade());
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
+
+            ObjectAnimator.ofInt(progressBar, "progress", 0, g)
+                    .setDuration(1000)
+                    .start();
+
+            ObjectAnimator.ofFloat(itemView, "scaleX", 0.75f, 1f)
+                    .setDuration(100)
+                    .start();
+            ObjectAnimator.ofFloat(itemView, "scaleY", 0.75f, 1f)
+                    .setDuration(100)
+                    .start();
             courseName.setText(data.getCourseName());
+            progressBar.setProgress(g);
             finalGrade.setText("最终成绩: "+data.getFinalGrade());
             credit.setText("学    分: " + data.getCredit());
             GPA.setText("绩    点: " + data.getGPA());
