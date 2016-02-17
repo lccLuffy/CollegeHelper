@@ -2,10 +2,12 @@ package com.lcc.uestc.bean;
 
 import com.orm.SugarRecord;
 
+import java.io.Serializable;
+
 /**
  * Created by wanli on 2015/7/13.
  */
-public class GradeBean extends SugarRecord implements Comparable{
+public class GradeBean extends SugarRecord implements Comparable,Serializable{
     private String semester;
     private String courseCode;
     private String courseNumber;

@@ -67,7 +67,7 @@ public class CollectActivity extends BaseActivity {
     }
 
     @Override
-    protected int getLayoutView() {
+    protected int getLayoutId() {
         return R.layout.activity_collect;
     }
 

@@ -2,6 +2,7 @@ package com.lcc.uestc.adapter;
 
 import android.animation.ObjectAnimator;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.lcc.uestc.R;
+import com.lcc.uestc.activity.GradeDetailActivity;
 import com.lcc.uestc.bean.GradeBean;
 import com.lcc.uestc.widget.Recycler.NiceAdapter;
 import com.lcc.uestc.widget.Recycler.NiceViewHolder;
@@ -27,10 +29,18 @@ import butterknife.ButterKnife;
 public class GradeAdapter extends NiceAdapter<GradeBean> {
     private double averageGPA;
     private List<GradeBean> sortGrade;
-    public GradeAdapter(Activity context)
+    public GradeAdapter(final Activity context)
     {
         super(context);
         sortGrade = new ArrayList<>();
+        setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Intent intent = new Intent(context, GradeDetailActivity.class);
+                intent.putExtra("data",data.get(position));
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -101,6 +111,8 @@ public class GradeAdapter extends NiceAdapter<GradeBean> {
             finalGrade.setText("最终成绩: "+data.getFinalGrade());
             credit.setText("学    分: " + data.getCredit());
             GPA.setText("绩    点: " + data.getGPA());
+
+
         }
     }
     public double getAverageGPA() {

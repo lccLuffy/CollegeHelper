@@ -1,5 +1,7 @@
 package com.lcc.uestc.activity;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -16,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -78,11 +81,30 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         return true;
     }
 
+    ImageView imageViewRefresh;
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(final MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_refresh:
                 spinnerAdapter.refresh(true);
+                if(imageViewRefresh == null)
+                {
+                    imageViewRefresh = new ImageView(this);
+                    imageViewRefresh.setImageResource(R.mipmap.ic_refresh);
+                }
+                item.setEnabled(false);
+                item.setActionView(imageViewRefresh);
+                imageViewRefresh.animate()
+                        .rotationBy(180)
+                        .setDuration(1500)
+                        .setListener(new AnimatorListenerAdapter() {
+                            @Override
+                            public void onAnimationEnd(Animator animation) {
+                                item.setEnabled(true);
+                                item.setActionView(null);
+                            }
+                        })
+                        .start();
                 return true;
             case R.id.action_settings:
                 startActivity(new Intent(this, SettingsActivity.class));
@@ -94,7 +116,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     void init() {
         username.setText(User.getInstance().getName());
         actionBar.setDisplayHomeAsUpEnabled(false);
-
+        setTitle("");
         fragmentManager = getSupportFragmentManager();
 
 
@@ -143,7 +165,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     }
 
     @Override
-    protected int getLayoutView() {
+    protected int getLayoutId() {
         return R.layout.activity_main;
     }
 

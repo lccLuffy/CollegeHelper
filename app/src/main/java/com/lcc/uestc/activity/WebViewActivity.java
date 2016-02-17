@@ -6,17 +6,14 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.ImageButton;
 
 import com.lcc.uestc.R;
 
 import butterknife.Bind;
-import butterknife.OnClick;
 
 public class WebViewActivity extends BaseActivity {
 
@@ -25,23 +22,15 @@ public class WebViewActivity extends BaseActivity {
 
     private String url;
 
-    @Bind(R.id.action_prev)
-    ImageButton prev;
-
-    @Bind(R.id.action_next)
-    ImageButton next;
-
-    @Bind(R.id.action_reload)
-    ImageButton reload;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         url = getIntent().getStringExtra("url");
         init();
     }
+
     @Override
-    protected int getLayoutView() {
+    protected int getLayoutId() {
         return R.layout.activity_webview;
     }
 
@@ -54,8 +43,7 @@ public class WebViewActivity extends BaseActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        switch (id)
-        {
+        switch (id) {
             case R.id.action_open:
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
                 break;
@@ -68,23 +56,6 @@ public class WebViewActivity extends BaseActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    @OnClick({R.id.action_prev,R.id.action_reload,R.id.action_next})
-    public void click(View v)
-    {
-        switch (v.getId()) {
-            case R.id.action_prev:
-                webview.goBack();
-                break;
-            case R.id.action_next:
-                webview.goForward();
-                break;
-            case R.id.action_reload:
-                webview.reload();
-                break;
-            default:
-                break;
-        }
-    }
 
     private void init() {
         webview.setWebChromeClient(new MyWebChromeClient());
@@ -97,8 +68,7 @@ public class WebViewActivity extends BaseActivity {
         webview.loadUrl(url);
     }
 
-    class MyWebChromeClient extends WebChromeClient
-    {
+    class MyWebChromeClient extends WebChromeClient {
         @Override
         public void onProgressChanged(WebView view, int newProgress) {
 
@@ -111,13 +81,14 @@ public class WebViewActivity extends BaseActivity {
             setTitle(title);
         }
     }
-    class MyWebViewClient extends WebViewClient
-    {
+
+    class MyWebViewClient extends WebViewClient {
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             WebViewActivity.this.url = url;
             super.onPageStarted(view, url, favicon);
         }
+
         @Override
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
@@ -126,8 +97,7 @@ public class WebViewActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-        if(webview.canGoBack())
-        {
+        if (webview.canGoBack()) {
             webview.goBack();
             return;
         }

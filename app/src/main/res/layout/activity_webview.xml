@@ -12,41 +12,4 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <LinearLayout
-        android:id="@+id/web_buttom"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/darker_gray"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:id="@+id/action_prev"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackground"
-            android:contentDescription="@null"
-            android:padding="10dp"
-            android:src="@mipmap/ic_prev" />
-
-        <ImageButton
-            android:id="@+id/action_next"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackground"
-            android:contentDescription="@null"
-            android:padding="10dp"
-            android:src="@mipmap/ic_next" />
-
-        <ImageButton
-            android:id="@+id/action_reload"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackground"
-            android:contentDescription="@null"
-            android:padding="10dp"
-            android:src="@mipmap/ic_refresh" />
-    </LinearLayout>
 </LinearLayout>

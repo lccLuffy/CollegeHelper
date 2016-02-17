@@ -14,7 +14,7 @@ public class SettingsActivity extends BaseActivity {
     }
 
     @Override
-    protected int getLayoutView() {
+    protected int getLayoutId() {
         return R.layout.activity_setting;
     }
 
